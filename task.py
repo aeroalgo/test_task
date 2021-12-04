@@ -39,8 +39,9 @@ def second_solution(numbers):
 
 @time_counter(rep=1)
 def third_solution(numbers):
+    # Поиск в словаре по ключу быстрее чем поиск в массиве по элементу.
+    # Так же косвенно реализован метод remove с помощью простых операций вычитаний что тоже очень быстро.
     numbers_count = {i: 0 for i in range(min(numbers), max(numbers)+1)}
-    print(numbers_count)
     for i in range(len(numbers)):
         numbers_count[numbers[i]] += 1
 
