@@ -36,6 +36,23 @@ def second_solution(numbers):
         numbers_list.pop(0)
     return
 
+
+@time_counter(rep=1)
+def third_solution(numbers):
+    numbers_count = {i: 0 for i in range(min(numbers), max(numbers)+1)}
+    print(numbers_count)
+    for i in range(len(numbers)):
+        numbers_count[numbers[i]] += 1
+
+    for i in range(len(numbers)):
+        if numbers_count[numbers[i]] > 1:
+            numbers_count[numbers[i]] -= 1
+            number_is_in_tail = True
+        else:
+            number_is_in_tail = False
+    return
+
+
 first_solution(numbers)
 second_solution(numbers)
-
+third_solution(numbers)
