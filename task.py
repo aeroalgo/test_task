@@ -22,6 +22,7 @@ def time_counter(*, rep=1):
 @time_counter(rep=1)
 def first_solution(numbers):
     for i, number in enumerate(numbers):
+        # Операция среза это очень дорогая операция
         number_is_in_tail = number in numbers[i + 1:]
     return
 
@@ -31,6 +32,7 @@ def second_solution(numbers):
     numbers_list = numbers
     for i, number in enumerate(numbers):
         number_is_in_tail = number in numbers_list
+        # Удаление каждого элемента по которому мы проитерировались
         numbers_list.pop(0)
     return
 
